@@ -1,3 +1,4 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Quizz from './Quizz';
@@ -56,7 +57,6 @@ export default function App() {
           </Routes>
         </View>
       </NativeRouter>
-
   );
 }
 
