@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import tw from 'tailwind-react-native-classnames';
+import { NativeRouter, Route, Link } from "react-router-native";
 
 export default function App() {
   return (
