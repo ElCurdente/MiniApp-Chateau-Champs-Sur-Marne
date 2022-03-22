@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
     padding: 10
   },
   header: {
-    position: "fixed",
-    zIndex: "50",
+    position: "relative",
+    zIndex: 50,
     width: "100vw",
     height: "50px",
     display: "flex",
@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     color: "#fff"
   },
   nav: {
-    position: "fixed",
-    zIndex: "50",
+    position: "relative",
+    zIndex: 50,
     width: "100vw",
     height: "50px",
     flexDirection: "row",
