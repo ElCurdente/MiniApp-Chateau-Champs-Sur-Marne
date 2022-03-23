@@ -4,87 +4,46 @@ import { StyleSheet, Text, Image, View } from 'react-native';
 import Quizz from './Quizz';
 import Localisation from './Localisation';
 import About from './About'
-import tw from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 import { NativeRouter, Route, Routes, Link } from "react-router-native";
 import chateau from './img/chateau.jpg';
 import Info from './img/icon/information.svg';
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 25,
-    padding: 10
-  },
-  header: {
-    position: "relative",
-    zIndex: 50,
-    width: "100vw",
-    height: "50px",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    top: "0",
-    left: "0",
-    backgroundColor: "#000",
-    color: "#fff"
-  },
-  nav: {
-    position: "relative",
-    zIndex: 50,
-    width: "100vw",
-    height: "50px",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    bottom: "0",
-    left: "0",
-    backgroundColor: "#000",
-    color: "#fff"
-  },
-  navItem: {
-    flex: 1,
-    alignItems: "center",
-    padding: 10
-  },
-  subNavItem: {
-    padding: 5
-  },
-  topic: {
-    textAlign: "center",
-    fontSize: 15
-  }
-});
+import { useTailwind } from 'tailwind-rn';
 
 export default function App() {
 
+  const tailwind = useTailwind();
+
   return (
-      <NativeRouter>
-        <View style={tw.style('h-full w-full flex relative')}>
-          <View style={styles.header}>
-            <Text style={tw.style('text-white')}>Château de Champs-Sur-Marne</Text>
-          </View>
-          <View style={styles.nav}>
-            <Link to="/" underlayColor="#f0f4f7" style={tw.style('')}>
-              {/* <Text style={tw.style('text-white')}>Home</Text> */}
-              <Image
-              style={tw.style('w-10 h-10 z-50')}
-                source={require('./img/icon/information.svg')}
-              />
-            </Link>
-            <Link to="/quizz" underlayColor="#f0f4f7" style={tw.style('')}>
-              <Text style={tw.style('text-white')}>Quizz</Text>
-            </Link>
-            <Link to="/localisation" underlayColor="#f0f4f7" style={tw.style('')}>
-              <Text style={tw.style('text-white')}>Localisation</Text>
-            </Link>
-          </View>
-          <Routes>
-            <Route exact path="/" element={<About/>} />
-            <Route path="/quizz" element={<Quizz/>} />
-            <Route path="/localisation" element={<Localisation/>} />
-          </Routes>
+    <NativeRouter>
+      <View style={tw.style('h-full w-full flex relative z-50')}>
+        <View style={tw.style('bg-black relative top-0 left-0 h-20 w-full items-center justify-center ')}>
+          <Text style={tw.style('text-white text-lg font-bold')}>Château de Champs-Sur-Marne</Text>
         </View>
-      </NativeRouter>
+        <View style={tw.style('absolute bottom-0 left-0 flex flex-row justify-evenly items-center w-full h-20 bg-black')}>
+          <View style={tw.style('flex-row justify-evenly w-full h-full items-center relative z-50')}>
+            <Link to="/" underlayColor="#f0f4f7" style={tailwind('')}>
+              <Text style={tw.style('text-white font-bold')}>Home</Text>
+              {/* <Image
+              style={tw.style('w-10 relative h-10 z-50 mt-20')}
+                source={require('./img/icon/information.svg')}
+              /> */}
+            </Link>
+            <Link to="/quizz" underlayColor="#f0f4f7" style={tailwind('')}>
+              <Text style={tw.style('text-white font-bold')}>Quizz</Text>
+            </Link>
+            <Link to="/localisation" underlayColor="#f0f4f7" style={tailwind('')}>
+              <Text style={tw.style('text-white font-bold')}>Localisation</Text>
+            </Link>
+          </View>
+        </View>
+        <Routes>
+          <Route exact path="/" element={<About />} />
+          <Route path="/quizz" element={<Quizz />} />
+          <Route path="/localisation" element={<Localisation />} />
+        </Routes>
+      </View>
+    </NativeRouter>
   );
 }
 
