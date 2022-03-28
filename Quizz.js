@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, ScrollView, View, Button } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Button, Share } from 'react-native';
 import tw from 'twrnc';
 import { NativeRouter, Route, Link } from "react-router-native";
 import chateau from './img/chateau.jpg';
@@ -91,9 +91,25 @@ export default function Quizz() {
 
   let answersTemp;
 
+  const title = "Awesome Contents";
+const message = "Please check this out.";
+
+const options = {
+  title,
+  message,
+};
+
+const share = async (customOptions = options) => {
+  try {
+    await Share.open(customOptions);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
   return (
     <ScrollView style={styles.container}>
-      <Text style={tw.style('text-lg mx-auto mb-5 mt-2 font-bold')}>Quizz</Text>
+      <Text style={tw.style('text-lg mx-auto mb-5 mt-2 font-bold')}>Quiz</Text>
       <View style={tw.style('pb-24 mx-4')}>
         {questions.map(q => (
           answersTemp = answers.filter(x => x.ext_id_question == q.id_question),
@@ -125,9 +141,12 @@ export default function Quizz() {
         {numberAnswer == 7 &&
           // <Text>Quizz terminé !</Text>
           <Button
+          onPress={async () => {
+            await share();
+          }}
             title="Partager"
             color="#841584"
-            accessibilityLabel="Learn more about this purple button"
+            accessibilityLabel="Partgez votre score"
           />
         }
       </View>
