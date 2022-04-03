@@ -46,9 +46,9 @@ export default function About() {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={tw.style('w-full flex items-center')}>
-        <View style={tw.style('absolute bg-white w-60 rounded-lg z-20')}>
-          <Text style={tw.style('text-lg mx-auto mb-5 mt-3 font-bold')}>Infos pratiques</Text>
+      <View style={tw.style('w-full flex items-center mt-4')}>
+        <View style={tw.style('absolute bg-black w-60 rounded-lg z-20')}>
+          <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Infos pratiques</Text>
         </View>
       </View>
       <View style={tw.style('h-60 mx-4 mt-7')}>
@@ -72,7 +72,7 @@ export default function About() {
       </View>
       <View style={tw.style('pb-5')}>
       <View style={tw.style('w-full flex items-center z-20 mt-12')}>
-        <View style={tw.style('absolute bg-white w-60 rounded-lg ')}>
+        <View style={tw.style('absolute bg-blue-300 w-60 rounded-lg ')}>
           <Text style={tw.style('text-lg mx-auto mb-5 mt-3 font-bold')}>Tarifs</Text>
         </View>
       </View>
