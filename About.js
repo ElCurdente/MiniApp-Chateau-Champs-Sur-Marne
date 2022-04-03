@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, ScrollView, View, Button, Share, Image } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Button, Share, Image, Linking } from 'react-native';
 import Quizz from './Quizz';
 import Localisation from './Localisation';
 import tw from 'tailwind-react-native-classnames';
@@ -72,8 +72,8 @@ export default function About() {
       </View>
       <View style={tw.style('pb-5')}>
       <View style={tw.style('w-full flex items-center z-20 mt-12')}>
-        <View style={tw.style('absolute bg-blue-300 w-60 rounded-lg ')}>
-          <Text style={tw.style('text-lg mx-auto mb-5 mt-3 font-bold')}>Tarifs</Text>
+        <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
+          <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Tarifs</Text>
         </View>
       </View>
         <View style={tw.style('h-60 mx-4 mt-7')}>
@@ -132,8 +132,8 @@ export default function About() {
 
       <View style={tw.style('pb-5')}>
       <View style={tw.style('w-full flex items-center z-20 mt-12')}>
-        <View style={tw.style('absolute bg-white w-60 rounded-lg ')}>
-          <Text style={tw.style('text-lg mx-auto mb-5 mt-3 font-bold')}>Horaires</Text>
+        <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
+          <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Horaires</Text>
         </View>
       </View>
         <View style={tw.style('h-60 mx-4 mt-7')}>
@@ -172,8 +172,8 @@ export default function About() {
 
       <View style={tw.style('pb-5')}>
       <View style={tw.style('w-full flex items-center z-20 mt-12')}>
-        <View style={tw.style('absolute bg-white w-60 rounded-lg ')}>
-          <Text style={tw.style('text-lg mx-auto mb-5 mt-3 font-bold')}>Accès</Text>
+        <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
+          <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Accès</Text>
         </View>
       </View>
         <View style={tw.style('h-60 mx-4 mt-7')}>
@@ -195,7 +195,7 @@ export default function About() {
           77420 Champs-sur-Marne
         </Text>
         <Text style={tw.style('mx-4 mt-2 text-base')}>
-          Tél. : 33 / (0)1 64 62 74 42
+          Tél. : 33 / <Text style={tw.style('font-bold')} onPress={() => Linking.openURL('tel:(0)1 64 62 74 42') }>(0)1 64 62 74 42</Text>
         </Text>
 
         <Text style={tw.style('mx-4 mt-5 font-bold text-lg')}>
@@ -225,8 +225,8 @@ export default function About() {
 
       <View style={tw.style('pb-24')}>
       <View style={tw.style('w-full flex items-center z-20 mt-12')}>
-        <View style={tw.style('absolute bg-white w-60 rounded-lg ')}>
-          <Text style={tw.style('text-lg mx-auto mb-5 mt-3 font-bold')}>Contact</Text>
+        <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
+          <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Contact</Text>
         </View>
       </View>
         <View style={tw.style('h-60 mx-4 mt-7')}>
@@ -238,13 +238,13 @@ export default function About() {
         }} />
       </View>
         <Text style={tw.style('mx-4 mt-5  text-base')}>
-        Pour toute demande de location de salle, de tournage, mariage ou shooting photo, écrivez à : <Text style={tw.style('font-bold')}>champs@monuments-nationaux.fr</Text>
+        Pour toute demande de location de salle, de tournage, mariage ou shooting photo, écrivez à : <Text style={tw.style('font-bold underline')} onPress={() => Linking.openURL('mailto:champs@monuments-nationaux.fr') }>champs@monuments-nationaux.fr</Text>
         </Text>
         <Text style={tw.style('mx-4 mt-5  text-base')}>
-        Pour toute demande de réservation de groupes et de scolaires, écrivez à : <Text style={tw.style('font-bold')}>reservations.champs@monuments-nationaux.fr</Text>
+        Pour toute demande de réservation de groupes et de scolaires, écrivez à : <Text style={tw.style('font-bold underline')} onPress={() => Linking.openURL('mailto:reservations.champs@monuments-nationaux.fr') }>reservations.champs@monuments-nationaux.fr</Text>
         </Text>
         <Text style={tw.style('mx-4 mt-5  text-base')}>
-        Pour toute autre demande, contactez le standard du domaine, au 01.60.05.24.43, où vous serez redirigés vers nos services. 
+        Pour toute autre demande, contactez le standard du domaine, au <Text style={tw.style('font-bold underline')} onPress={() => Linking.openURL('tel:01.60.05.24.43') }>01.60.05.24.43</Text>, où vous serez redirigés vers nos services. 
         </Text>
       </View>
 

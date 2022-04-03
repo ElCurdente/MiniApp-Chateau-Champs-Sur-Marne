@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, ScrollView, View, Button, Share } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Button} from 'react-native';
 import tw from 'twrnc';
 import { NativeRouter, Route, Link } from "react-router-native";
 import chateau from './img/chateau.jpg';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
+// import {Share} from 'react-native-share';
 
 export default function Quizz() {
 
@@ -99,17 +100,25 @@ const options = {
   message,
 };
 
-const share = async (customOptions = options) => {
-  try {
-    await Share.open(customOptions);
-  } catch (err) {
-    console.log(err);
-  }
-};
+// const share = async (customOptions = options) => {
+//   try {
+//     await Share.open(customOptions);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
+// Share.open(options)
+// .then((res) => {
+//   console.log(res);
+// })
+// .catch((err) => {
+//   err && console.log(err);
+// });
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={tw.style('text-lg mx-auto mb-5 mt-2 font-bold')}>Quiz</Text>
+      <Text style={tw.style('text-xl mx-auto mb-5 mt-4 font-bold')}>Quiz</Text>
       <View style={tw.style('pb-24 mx-4')}>
         {questions.map(q => (
           answersTemp = answers.filter(x => x.ext_id_question == q.id_question),
@@ -122,14 +131,14 @@ const share = async (customOptions = options) => {
                     onPress={onPressAnswer.bind(a)}
                     
                     color="#841584"
-                    accessibilityLabel="Learn more about this purple button"
+                    accessibilityLabel="Bouton non accessible"
                     disabled="true"
                     style={styles.disabled}
                   ><Text style={styles.text}>{a.contenu}</Text></Pressable>
                   :
                   <Pressable
                     onPress={onPressAnswer.bind(a)}
-                    accessibilityLabel="Learn more about this purple button"
+                    accessibilityLabel="Bouton cliquable"
                     style={styles.button}
                   ><Text style={styles.text}>{a.contenu}</Text></Pressable>
                 }
@@ -137,8 +146,8 @@ const share = async (customOptions = options) => {
             ))}
           </View>
         ))}
-        <Text>Score : {score}</Text>
-        {numberAnswer == 7 &&
+        <Text style={tw.style('text-xl font-bold text-center')}>Score : {score}</Text>
+        {/* {numberAnswer == 7 &&
           // <Text>Quizz terminé !</Text>
           <Button
           onPress={async () => {
@@ -148,7 +157,7 @@ const share = async (customOptions = options) => {
             color="#841584"
             accessibilityLabel="Partgez votre score"
           />
-        }
+        } */}
       </View>
 
       <StatusBar style="auto" />
