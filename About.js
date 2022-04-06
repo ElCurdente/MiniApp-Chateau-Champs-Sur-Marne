@@ -45,7 +45,12 @@ export default function About() {
   });
 
   return (
+
+    //Page A propos
+
     <ScrollView style={styles.container}>
+
+      //Section Infos Pratique
       <View style={tw.style('w-full flex items-center mt-4')}>
         <View style={tw.style('absolute bg-black w-60 rounded-lg z-20')}>
           <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Infos pratiques</Text>
@@ -70,20 +75,22 @@ export default function About() {
           Très bonne visite.
         </Text>
       </View>
+
+      //Section Tarifs
       <View style={tw.style('pb-5')}>
-      <View style={tw.style('w-full flex items-center z-20 mt-12')}>
-        <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
-          <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Tarifs</Text>
+        <View style={tw.style('w-full flex items-center z-20 mt-12')}>
+          <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
+            <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Tarifs</Text>
+          </View>
         </View>
-      </View>
         <View style={tw.style('h-60 mx-4 mt-7')}>
-        <Image source={require('./img/tarifs.jpg')} style={{
-          resizeMode: 'cover',
-          width: '100%',
-          height: '100%',
-          borderRadius: 10
-        }} />
-      </View>
+          <Image source={require('./img/tarifs.jpg')} style={{
+            resizeMode: 'cover',
+            width: '100%',
+            height: '100%',
+            borderRadius: 10
+          }} />
+        </View>
         <Text style={tw.style('mx-4 mt-5 font-bold text-lg')}>
           Tarif individuel : 8€
         </Text>
@@ -130,20 +137,21 @@ export default function About() {
         </Text>
       </View>
 
+      //Section Horaires
       <View style={tw.style('pb-5')}>
-      <View style={tw.style('w-full flex items-center z-20 mt-12')}>
-        <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
-          <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Horaires</Text>
+        <View style={tw.style('w-full flex items-center z-20 mt-12')}>
+          <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
+            <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Horaires</Text>
+          </View>
         </View>
-      </View>
         <View style={tw.style('h-60 mx-4 mt-7')}>
-        <Image source={require('./img/horaires.jpg')} style={{
-          resizeMode: 'cover',
-          width: '100%',
-          height: '100%',
-          borderRadius: 10
-        }} />
-      </View>
+          <Image source={require('./img/horaires.jpg')} style={{
+            resizeMode: 'cover',
+            width: '100%',
+            height: '100%',
+            borderRadius: 10
+          }} />
+        </View>
         <Text style={tw.style('mx-4 mt-5 font-bold text-base')}>
           De fin juin à septembre :
         </Text>
@@ -170,20 +178,21 @@ export default function About() {
         </Text>
       </View>
 
+      //Section Accès
       <View style={tw.style('pb-5')}>
-      <View style={tw.style('w-full flex items-center z-20 mt-12')}>
-        <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
-          <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Accès</Text>
+        <View style={tw.style('w-full flex items-center z-20 mt-12')}>
+          <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
+            <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Accès</Text>
+          </View>
         </View>
-      </View>
         <View style={tw.style('h-60 mx-4 mt-7')}>
-        <Image source={require('./img/accès.png')} style={{
-          resizeMode: 'cover',
-          width: '100%',
-          height: '100%',
-          borderRadius: 10
-        }} />
-      </View>
+          <Image source={require('./img/accès.png')} style={{
+            resizeMode: 'cover',
+            width: '100%',
+            height: '100%',
+            borderRadius: 10
+          }} />
+        </View>
         <Text style={tw.style('mx-4 mt-5 font-bold text-lg')}>
           CHÂTEAU DE CHAMPS-SUR-MARNE
         </Text>
@@ -195,7 +204,8 @@ export default function About() {
           77420 Champs-sur-Marne
         </Text>
         <Text style={tw.style('mx-4 mt-2 text-base')}>
-          Tél. : 33 / <Text style={tw.style('font-bold')} onPress={() => Linking.openURL('tel:(0)1 64 62 74 42') }>(0)1 64 62 74 42</Text>
+          //Au clic sur le numéro de téléphone, ouvre l'application téléphone avec un lien vers ce numéro
+          Tél. : 33 / <Text style={tw.style('font-bold')} onPress={() => Linking.openURL('tel:(0)1 64 62 74 42')}>(0)1 64 62 74 42</Text>
         </Text>
 
         <Text style={tw.style('mx-4 mt-5 font-bold text-lg')}>
@@ -219,32 +229,33 @@ export default function About() {
           EN VOITURE
         </Text>
         <Text style={tw.style('mx-4 mt-2 text-base')}>
-        De Paris : A 4, sortie n°10 Champs, suivre le fléchage "château de Champs", 30 min de trajet. // De province : A4, sortie Noisiel suivre le fléchage
+          De Paris : A 4, sortie n°10 Champs, suivre le fléchage "château de Champs", 30 min de trajet. // De province : A4, sortie Noisiel suivre le fléchage
         </Text>
       </View>
 
+      //Section Contact
       <View style={tw.style('pb-24')}>
-      <View style={tw.style('w-full flex items-center z-20 mt-12')}>
-        <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
-          <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Contact</Text>
+        <View style={tw.style('w-full flex items-center z-20 mt-12')}>
+          <View style={tw.style('absolute bg-black w-60 rounded-lg ')}>
+            <Text style={tw.style('text-lg text-white mx-auto mb-5 mt-3 font-bold')}>Contact</Text>
+          </View>
         </View>
-      </View>
         <View style={tw.style('h-60 mx-4 mt-7')}>
-        <Image source={require('./img/contact.jpg')} style={{
-          resizeMode: 'cover',
-          width: '100%',
-          height: '100%',
-          borderRadius: 10
-        }} />
-      </View>
+          <Image source={require('./img/contact.jpg')} style={{
+            resizeMode: 'cover',
+            width: '100%',
+            height: '100%',
+            borderRadius: 10
+          }} />
+        </View>
         <Text style={tw.style('mx-4 mt-5  text-base')}>
-        Pour toute demande de location de salle, de tournage, mariage ou shooting photo, écrivez à : <Text style={tw.style('font-bold underline')} onPress={() => Linking.openURL('mailto:champs@monuments-nationaux.fr') }>champs@monuments-nationaux.fr</Text>
+          Pour toute demande de location de salle, de tournage, mariage ou shooting photo, écrivez à : <Text style={tw.style('font-bold underline')} onPress={() => Linking.openURL('mailto:champs@monuments-nationaux.fr')}>champs@monuments-nationaux.fr</Text>
         </Text>
         <Text style={tw.style('mx-4 mt-5  text-base')}>
-        Pour toute demande de réservation de groupes et de scolaires, écrivez à : <Text style={tw.style('font-bold underline')} onPress={() => Linking.openURL('mailto:reservations.champs@monuments-nationaux.fr') }>reservations.champs@monuments-nationaux.fr</Text>
+          Pour toute demande de réservation de groupes et de scolaires, écrivez à : <Text style={tw.style('font-bold underline')} onPress={() => Linking.openURL('mailto:reservations.champs@monuments-nationaux.fr')}>reservations.champs@monuments-nationaux.fr</Text>
         </Text>
         <Text style={tw.style('mx-4 mt-5  text-base')}>
-        Pour toute autre demande, contactez le standard du domaine, au <Text style={tw.style('font-bold underline')} onPress={() => Linking.openURL('tel:01.60.05.24.43') }>01.60.05.24.43</Text>, où vous serez redirigés vers nos services. 
+          Pour toute autre demande, contactez le standard du domaine, au <Text style={tw.style('font-bold underline')} onPress={() => Linking.openURL('tel:01.60.05.24.43')}>01.60.05.24.43</Text>, où vous serez redirigés vers nos services.
         </Text>
       </View>
 

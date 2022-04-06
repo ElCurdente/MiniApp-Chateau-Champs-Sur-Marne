@@ -30,6 +30,7 @@ export default function Localisation() {
         }
     });
 
+    //Demande la permission et si elle est positive --> récupère en arrière plan les coordonnées de l'utilisateur    
     const requestPermissions = async () => {
         const { status } = await Location.requestBackgroundPermissionsAsync();
         if (status === 'granted') {
@@ -76,9 +77,9 @@ export default function Localisation() {
         }
     };
 
-    
 
 
+    // Essais de localisation
 
 
     //      const [location, setLocation] = useState({});
@@ -172,7 +173,9 @@ export default function Localisation() {
 
     return (
         <View style={styles.container}>
-            <Button onPress={requestPermissions} style={tw.style('h-20 w-60 flex relative bg-white px-5 py-5 rounded-lg top-40 z-50')} title='Autoriser la géolocalisation de votre appareil'/>
+            <Button onPress={requestPermissions} style={tw.style('h-20 w-60 flex relative bg-white px-5 py-5 rounded-lg top-40 z-50')} title='Autoriser la géolocalisation de votre appareil' />
+
+            // Map centrée sur le château
             <MapView style={styles.map}
                 initialRegion={{
                     latitude: 48.8536,
